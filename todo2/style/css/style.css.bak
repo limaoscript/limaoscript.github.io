@@ -1,4 +1,4 @@
-﻿html body{
+html body{
 	font-family: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font: 14px;
 	padding: 0;
@@ -46,31 +46,10 @@ body{
 	width: 534px;
 	height: 65px;
 	font-size: 24px;
-	padding-left: 57px;
+	padding-left: 10px;
 	border-top: 0;
 	outline:none;
 }
-/*#header-select{
-	position: relative;
-	overflow: hidden;
-}*/
-#input-allcheck{
-    height: 65px;
-    width: 41px;
-    clip: rect(6 15 6 5);
-    position: absolute;
-	transform:rotate(90deg);
-	-ms-transform:rotate(90deg); 	/* IE 9 */
-	-moz-transform:rotate(90deg); 	/* Firefox */
-	-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
-	-o-transform:rotate(90deg); 	/* Opera */
-}
-#input-allcheck:before{
-	content: "»";
-	font-size: 28px;
-	padding: 0 25px 7px;
-}
-
 li {
     list-style: none;
     border: 1px dotted gray;
