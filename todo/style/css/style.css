@@ -11,6 +11,11 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 body{
 	background-color: #E6E6E6;
 }
+.clearfix,.clearfix:before,.clearfix:after{
+	overflow: hidden;
+	*zoom:1;
+	_zoom:1;
+}
 #content{
 	width: 548px;
 	/*height: 300px;/*shan*/
@@ -43,8 +48,24 @@ body{
 	width: 534px;
 	height: 65px;
 	font-size: 24px;
-	padding-left: 10px;
+	padding-left: 57px;
 	border-top: 0;
+	outline:none;
+}
+/*#header-select{
+	position: relative;
+	overflow: hidden;
+}*/
+#input-allcheck{
+    height: 65px;
+    width: 41px;
+    clip: rect(6 15 6 5);
+    position: absolute;
+}
+#input-allcheck:before{
+	content: "1";
+	font-size: 28px;
+	padding: 0 25px 7px;
 }
 
 li {
