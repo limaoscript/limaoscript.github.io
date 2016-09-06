@@ -1,0 +1,48 @@
+ul,li{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.carousel{
+			position: relative;
+			width: 310px;
+			height: 206px;
+			overflow: hidden;
+		}
+
+		.carousel .img-ct{
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+
+		.carousel .img-ct li{
+			display: inline-block;
+		}
+		
+		.arrow{
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			width: 30px;
+			height: 30px;
+			border-radius: 30px;
+			line-height: 30px;
+			color: #fff;
+			background-color: #4E443C;
+			text-align: center;
+			opacity: 0.8
+		}
+		.arrow:hover{
+			opacity: 1;
+		}
+
+		.pre{
+			left: 10px;
+		}
+		.next{
+			right: 10px;
+		}
