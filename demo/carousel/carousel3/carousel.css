@@ -1,47 +1,45 @@
-*{
-	box-sizing: border-box;
+* {
+	box-sizing: border-box
 }
-.carousel{
+.carousel {
 	width: 600px;
 	height: 400px;
 	margin: 100px auto;
 	overflow: hidden;
-	position: relative;
+	position: relative
 }
-.carousel ul{
-	margin:0;
+.carousel .carousel-container {
+	margin: 0;
 	padding: 0;
 	position: relative;
 	top: 0;
 	left: 0;
 	font-size: 0;
 }
-.carousel li{
+.carousel li {
 	width: 600px;
 	height: 400px;
-	line-height: 400px;
+	line-height:400px;
 	text-align: center;
 	color: #fff;
 	font-size: 60px;
-	display: inline-block;
+	display: inline-block
 }
-
-.carousel .indicators{
+.carousel .indicators {
 	position: absolute;
 	bottom: 20px;
-	right: 20px;
-	/*z-index: 20;*/
+	right: 20px
 }
-
-.carousel .indicator{
+.carousel .indicator {
 	display: inline-block;
 	height: 12px;
 	width: 12px;
 	border-radius: 12px;
 	background-color: #fff;
 	margin-right: 5px;
+	cursor: pointer;
+}
+.carousel .indicator-active {
+	background-color: #ffc107;
 }
 
-.indicator-active{
-	background-color: yellow;	
-}
