@@ -27,13 +27,13 @@ function Carousel(cantainer, conf) {
 Carousel.prototype = {
 
 	init: function() {
-		var $ref = this.$ref;
-		var width = this.conf.width;
-		var height = this.conf.height;
-		var $container = $ref.find('.carousel-container');
-		var containerItems = $container.find('>li');
-		var $indicators = $ref.find('.indicators');
-		var len = containerItems.length;
+		var $ref = this.$ref,
+			width = this.conf.width,
+			height = this.conf.height,
+			$container = $ref.find('.carousel-container'),
+			containerItems = $container.find('>li'),
+			$indicators = $ref.find('.indicators'),
+			len = containerItems.length;
 		//1.构造包裹层。当前指示器 DOM结构
 		containerItems.each(function(index, ele) {
 				$indicators.append('<div data-index="' + index + '"class="indicator" ></div>');
@@ -68,12 +68,12 @@ Carousel.prototype = {
 			var me = this;
 			this.timer = setTimeout(function() {
 				me.next();
-				setTimeout(arguments.callee, 2000);
+				me.timer = setTimeout(arguments.callee, 2000);
 			}, 2000);
 		}
 	},
 
-	go: function(index) {
+	go: function(index, isClick) {
 
 		var currentIndex = this.currentIndex,
 			conf = this.conf,
@@ -82,6 +82,7 @@ Carousel.prototype = {
 			item = this.$containerItems,
 			refItemLen = ref.find('>li').length,
 			timer = this.timer;
+		
 
 		if (index > refItemLen - 1) {
 			index = 0;
@@ -120,7 +121,15 @@ Carousel.prototype = {
 			});
 
 		}
+
 		this.currentIndex = index;
+		if (isClick) {
+			if (timer) {
+				clearTimeout(timer);
+				this.timer = null;
+				this.autoTask(true);
+			}
+		}
 	},
 
 	prev: function() {
@@ -134,8 +143,9 @@ Carousel.prototype = {
 	bind: function($indicators, Carousel) {
 		$indicators.on('click', '.indicator', function(event) {
 			event.prventDefault;
-			var indicatorIndex = $(this).attr('data-index');
-			Carousel.go(indicatorIndex);
+			var indicatorIndex = parseInt($(this).attr('data-index'));
+			var isClick = true;
+			Carousel.go(indicatorIndex, isClick);
 		});
 	}
 };
