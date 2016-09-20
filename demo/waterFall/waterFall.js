@@ -53,10 +53,9 @@
 			}
 		}
 
-
-
 		$(window).on('load', init);
 		$(window).resize(init);
 		return this;
 	}
 })(jQuery)
+

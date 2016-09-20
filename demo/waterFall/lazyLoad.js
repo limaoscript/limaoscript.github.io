@@ -5,6 +5,9 @@ var lazyLoad = (function() {
 			lazyLoad._bind();
 		}
 		lazyLoad._add($selector, callback);
+		setTimeout(function(){
+			lazyLoad._do();
+		},1000)
 	}
 
 	function showImg($img) {
@@ -20,9 +23,11 @@ var lazyLoad = (function() {
 
 		_add: function($selector, callback) {
 			var me = this;
+
 			$selector.each(function() {
+				var $item = $(this);
 				me._queue.push({
-					$ele: $(this),
+					$ele: $item,
 					cab: callback
 				})
 			})
@@ -40,9 +45,6 @@ var lazyLoad = (function() {
 					me._do();
 				}, interval);
 			});
-			// $(window).on('reaize',function(){
-			// 	me._do();
-			// })
 			this._isBind = true;
 		},
 
@@ -55,6 +57,7 @@ var lazyLoad = (function() {
 			for (; i < len; i++) {
 				var item = queueList[i];
 				if (this._isShow(item.$ele)) {
+					console.log(item.$ele.offset().top)
 					item.cab.call(item.$ele[0]);
 				} else {
 					arr.push(item);
@@ -70,16 +73,17 @@ var lazyLoad = (function() {
 
 			var top = $ele.offset().top;
 
-			return top < (scrollHeight + winHeight) ? true : false;
+			return (top < (scrollHeight + winHeight)) ? true : false;
 		}
-
 	};
+
 	return {
 		init: init,
 		showImg: showImg
 	}
 })();
-
-lazyLoad.init($('.box img'), function() {
-	lazyLoad.showImg($(this));
+$(function(){
+	lazyLoad.init($('.box img'), function() {
+		lazyLoad.showImg($(this));
+	})
 })
