@@ -88,12 +88,11 @@
 						interval = 40;
 					timer && clearTimeout( timer );
 					$(window).on('scroll',function(e){
-						//这里为什么要使用 定时器
 						timer = setTimeout(function(){
 							me._do();
 						}, interval);
 					});
-					this._bind = true;
+					this._isBind = true;
 				},
 				_do: function(){
 					var i = 0,
