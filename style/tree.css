@@ -1,0 +1,28 @@
+*{
+	box-sizing: border-box;
+}
+#container{
+	display: inline-block;
+}
+fieldset{
+	padding: 20px;
+}
+#ul-root{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	padding-left: 30px; 
+	margin:5px;
+}
+li{
+	list-style: none;
+	padding-bottom: 5px;
+}
+
+li span{
+	padding: 5px;
+	border: 1px solid #009a21;
+	display: inline-block;
+	border-radius: 3px;
+}
