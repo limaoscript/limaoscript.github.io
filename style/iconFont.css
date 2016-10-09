@@ -1,0 +1,31 @@
+﻿/*font-face声明字体*/
+@font-face {
+	font-family: "iconfont";
+	src: url('iconfont.eot?t=1475228277'); /* IE9*/
+	src: url('iconfont.eot?t=1475228277#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('iconfont.woff?t=1475228277') format('woff'), /* chrome, firefox */
+	url('iconfont.ttf?t=1475228277') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+	url('iconfont.svg?t=1475228277#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+/*定义使用iconfont的样式*/
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;/*chrome/safari抗锯齿处理*/
+	-webkit-font-smoothing: antialiased;/*在浏览器渲染的时候直接显示一个像素了，导致在有背景下的图标显示感觉加粗；所以在应用字体图标的时候需要对图标样式进行抗锯齿处理*/
+	-webkit-text-stroke-width: 0.2px;/*chrome浏览器下出现严重的锯齿*/
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-add:before {
+	content: "\e775";
+}
+.icon-enter:before {
+	content: "\e78b";
+}
+.icon-down:before {
+	content: "\e78a";
+}
+.icon-close:before {
+	content: "\e779";
+}

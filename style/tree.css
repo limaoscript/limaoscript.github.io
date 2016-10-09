@@ -22,7 +22,34 @@ li{
 
 li span{
 	padding: 5px;
-	border: 1px solid #009a21;
+	border: 1px solid #00b38a;
 	display: inline-block;
 	border-radius: 3px;
+}
+
+.invisible{
+	display: none;
+}
+
+.visible{
+	display: inline-block;
+}
+
+.icon{
+  font-size: 24px;
+  margin: 10px 0;
+  color:#333;
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
+
+}
+.icon:hover{
+  font-size: 26px;
+}
+
+.link:hover{
+	cursor: pointer;
+	background-color: #00b38a;
+	color: #fff;
 }
