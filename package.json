@@ -1,0 +1,27 @@
+{
+  "name": "limaoscript.github.io",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "jimmy": "^0.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limaoscript/limaoscript.github.io.git"
+  },
+  "keywords": [
+    "sd757255"
+  ],
+  "author": "jimmy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limaoscript/limaoscript.github.io/issues"
+  },
+  "homepage": "https://github.com/limaoscript/limaoscript.github.io#readme"
+}
