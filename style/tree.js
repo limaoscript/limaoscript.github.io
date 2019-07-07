@@ -233,16 +233,16 @@ Tree.prototype = {
 }
 
 var root = new Tree('前端开发');
-root.add('demo', '前端开发', root.traverseBF);
+root.add('project', '前端开发', root.traverseBF);
 root.add('JS', '前端开发', root.traverseBF);
 root.add('CSS', '前端开发', root.traverseBF);
 root.add('UI', '前端开发', root.traverseBF);
 root.add('HTML', '前端开发', root.traverseBF);
-root.add('轮播图构造模式', 'demo', root.traverseBF, 'http://limaoscript.github.io/demo/carousel/carousel1/index.html');
-root.add('轮播图模块化封装', 'demo', root.traverseBF, 'http://limaoscript.github.io/demo/carousel/carousel2/index.html');
-root.add('轮播图模块化封装2', 'demo', root.traverseBF, 'http://limaoscript.github.io/demo/carousel/carousel3/index.html');
-// root.add('懒加载', 'demo', root.traverseBF, 'http://limaoscript.github.io/demo/lazyload/index.html');
-root.add('瀑布流+懒加载', 'demo', root.traverseBF, 'http://limaoscript.github.io/demo/waterFall/index.html');
+root.add('轮播图构造模式', 'project', root.traverseBF, 'http://limaoscript.github.io/project/carousel/carousel1/index.html');
+root.add('轮播图模块化封装', 'project', root.traverseBF, 'http://limaoscript.github.io/project/carousel/carousel2/index.html');
+root.add('轮播图模块化封装2', 'project', root.traverseBF, 'http://limaoscript.github.io/project/carousel/carousel3/index.html');
+// root.add('懒加载', 'project', root.traverseBF, 'http://limaoscript.github.io/project/lazyload/index.html');
+root.add('瀑布流+懒加载', 'project', root.traverseBF, 'http://limaoscript.github.io/project/waterFall/index.html');
 root.add('AngularJS', 'JS', root.traverseBF);
 root.add('React', 'JS', root.traverseBF);
 root.add('ExtJS', 'JS', root.traverseBF);
