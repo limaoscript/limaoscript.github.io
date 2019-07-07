@@ -4,7 +4,6 @@
   "description": "demo",
   "main": "index.js",
   "dependencies": {
-    "bower": "^1.7.9",
   },
   "devDependencies": {},
   "scripts": {
@@ -15,7 +14,6 @@
     "url": "git+https://github.com/limaoscript/limaoscript.github.io.git"
   },
   "keywords": [
-    "sd757255"
   ],
   "author": "jimmy",
   "license": "ISC",
