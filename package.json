@@ -18,7 +18,7 @@
     "webpack-cli": "^3.3.5"
   },
   "scripts": {
-    "dev": "webpack",
+    "dev": "webpack --mode production",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
