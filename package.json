@@ -1,20 +1,32 @@
 {
   "name": "limaoscript.github.io",
   "version": "1.0.0",
-  "description": "demo",
+  "description": "个人项目",
   "main": "index.js",
   "dependencies": {
+    "babel-runtime": "^6.26.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^7.0.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "css-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  },
   "scripts": {
+    "dev": "webpack",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/limaoscript/limaoscript.github.io.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "jimmy",
   "license": "ISC",
   "bugs": {
