@@ -8,7 +8,6 @@ function addEvent(element, type, handler) {
     element['on' + type] = handler;
   }
 }
-
 function Node(data) {
 
   this.data = data;

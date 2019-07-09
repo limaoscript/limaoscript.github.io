@@ -12,10 +12,13 @@
     "babel-loader": "^7.0.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "css-loader": "^3.0.0",
+    "csv-loader": "^3.0.2",
+    "file-loader": "^4.0.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.4",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "xml-loader": "^1.2.1"
   },
   "scripts": {
     "dev": "webpack --mode production",
