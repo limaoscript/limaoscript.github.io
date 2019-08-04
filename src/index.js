@@ -1,7 +1,12 @@
 import printMe from './print.js';
+
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
+
 //事件的跨浏览器兼容
 function addEvent(element, type, handler) {
-  handler =printMe
+  handler = printMe
   if (element.addEventListener) {
     element.addEventListener(type, handler);
   } else if (element.attachEvent) {
@@ -10,6 +15,7 @@ function addEvent(element, type, handler) {
     element['on' + type] = handler;
   }
 }
+
 function Node(data) {
 
   this.data = data;
@@ -26,7 +32,7 @@ function Node(data) {
 
 Node.prototype = {
 
-  render: function(arrow, visibility, setHightlight, deHightLight) {
+  render: function (arrow, visibility, setHightlight, deHightLight) {
     if (arrow) {
       if (this.isLeaf()) {
         this.selfDOM.getElementsByClassName('icon-down')[0].className = 'iconfont icon-down invisible';
@@ -41,17 +47,17 @@ Node.prototype = {
     }
   },
 
-  isLeaf: function() {
+  isLeaf: function () {
     return this.children.length == 0;
   },
 
-  isFolded: function() {
+  isFolded: function () {
     if (this.isLeaf()) return false; // 叶结点返回false
     return true;
   },
 
   //展开/收拢
-  toggleFold: function() {
+  toggleFold: function () {
     var i = 0,
       len = this.children.length;
     if (this.isLeaf()) return this;
@@ -63,7 +69,7 @@ Node.prototype = {
   },
 
   //生成树的DOM
-  setDOM: function(treeName, parent, self, link) {
+  setDOM: function (treeName, parent, self, link) {
     var ul = document.createElement('ul'),
       li = document.createElement('li'),
       span = document.createElement('span'),
@@ -104,14 +110,14 @@ Node.prototype = {
   },
 
   //删除DOM
-  delDOM: function(parent, index) {
+  delDOM: function (parent, index) {
     parent.selfDOM.removeChild(parent.children[index].selfDOM);
   },
 
-  bind: function() {
+  bind: function () {
     var rootEle = document.getElementById('tree-area'),
       target = null;
-    addEvent(rootEle, 'click', function(e) {
+    addEvent(rootEle, 'click', function (e) {
       target = e.target;
       e.stopPropagation() || (window.event.cancelBubble = true); //阻止事件冒泡兼容
       //图标展开状态
@@ -150,7 +156,7 @@ function Tree(data) {
 Tree.prototype = {
 
   //深度首次遍历
-  traverseDF: function(callback) {
+  traverseDF: function (callback) {
     (function recurse(currentNode) {
       for (var i = 0; i < currentNode.children.length; i++) {
         recurse(currentNode.children[i]);
@@ -160,7 +166,7 @@ Tree.prototype = {
   },
 
   //广度首次遍历
-  traverseBF: function(callback) {
+  traverseBF: function (callback) {
     var queue = [];
 
     queue.push(this._root);
@@ -174,14 +180,14 @@ Tree.prototype = {
     }
   },
 
-  contains: function(callback, traversal) {
+  contains: function (callback, traversal) {
     traversal.call(this, callback);
   },
 
-  add: function(data, toData, tvaversal, link) {
+  add: function (data, toData, tvaversal, link) {
     var child = new Node(data),
       parent = null,
-      callback = function(node) {
+      callback = function (node) {
         if (node.data === toData) {
           parent = node;
         }
@@ -197,10 +203,10 @@ Tree.prototype = {
     }
   },
 
-  remove: function(data, formData, tvaversal) {
+  remove: function (data, formData, tvaversal) {
     var parent = null,
       index,
-      callback = function(node) {
+      callback = function (node) {
         if (node.data === formData) {
           parent = node;
         }
@@ -220,7 +226,7 @@ Tree.prototype = {
     }
   },
 
-  getIndex: function(data, parent) {
+  getIndex: function (data, parent) {
     var i = 0,
       len = parent.children.length;
     index;

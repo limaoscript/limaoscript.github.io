@@ -1,4 +1,4 @@
-// webpack v4
+// webpack v4 学习代码
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //通过 npm 安装
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const webpack = require('webpack'); //访问内置的插件
