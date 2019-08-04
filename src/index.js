@@ -1,12 +1,7 @@
 import printMe from './print.js';
-
-if (process.env.NODE_ENV !== 'production') {
-  console.log('Looks like we are in development mode!');
-}
-
+import '../src/index.css'
 //事件的跨浏览器兼容
 function addEvent(element, type, handler) {
-  handler = printMe
   if (element.addEventListener) {
     element.addEventListener(type, handler);
   } else if (element.attachEvent) {
