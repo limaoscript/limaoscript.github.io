@@ -236,21 +236,21 @@ Tree.prototype = {
 }
 
 let root = new Tree('前端开发');
-root.add('project', '前端开发', root.traverseBF);
+root.add('demo', '前端开发', root.traverseBF);
 root.add('JS', '前端开发', root.traverseBF);
 root.add('CSS', '前端开发', root.traverseBF);
 root.add('UI', '前端开发', root.traverseBF);
 root.add('HTML', '前端开发', root.traverseBF);
-root.add('轮播图构造模式', 'project', root.traverseBF, './carousel1.html');
-root.add('轮播图模块化封装', 'project', root.traverseBF, './carousel2.html');
-root.add('轮播图模块化封装2', 'project', root.traverseBF, './carousel3.html');
+root.add('轮播图构造模式', 'demo', root.traverseBF, './carousel1.html');
+root.add('轮播图模块化封装', 'demo', root.traverseBF, './carousel2.html');
+root.add('轮播图模块化封装2', 'demo', root.traverseBF, './carousel3.html');
 // root.add('懒加载', 'project', root.traverseBF, './project/lazyload/index.html');
-root.add('瀑布流+懒加载', 'project', root.traverseBF, './waterFall.html');
+root.add('瀑布流+懒加载', 'demo', root.traverseBF, './waterFall.html');
 root.add('AngularJS', 'JS', root.traverseBF);
 root.add('React', 'JS', root.traverseBF);
 root.add('ExtJS', 'JS', root.traverseBF);
 root.add('NodeJS', 'JS', root.traverseBF);
 root.add('CSS2.0', 'CSS', root.traverseBF);
 root.add('CSS3.0', 'CSS', root.traverseBF);
-root.add('sass', 'CSS', root.traverseBF);
+root.add('SASS', 'CSS', root.traverseBF);
 root.add('bootstrap', 'UI', root.traverseBF);
