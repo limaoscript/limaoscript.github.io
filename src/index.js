@@ -1,5 +1,5 @@
-import printMe from './print.js';
 import '../src/index.css'
+import '../src/iconFont/iconFont.css'
 //事件的跨浏览器兼容
 function addEvent(element, type, handler) {
   if (element.addEventListener) {
