@@ -71,7 +71,7 @@ Carousel.prototype = {
       let me = this;
       this.timer = setTimeout(function() {
         me.next();
-        me.timer = setTimeout(arguments.callee, 2000);
+        me.timer = setTimeout(me.timer, 2000);
       }, 2000);
     }
   },
@@ -152,4 +152,7 @@ Carousel.prototype = {
     });
   }
 };
-new Carousel('.carousel',{index:2,width:600,height:400, autoTask:true});
+new Carousel(
+  '.carousel',
+  {index:2,width:600,height:400, autoTask:true}
+  );
