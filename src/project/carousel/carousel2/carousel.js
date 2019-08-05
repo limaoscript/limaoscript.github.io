@@ -4,7 +4,7 @@
 			var carouselList = [];
 			function init($carousel){
 				$carousel.each(function(){
-					$calItem = $(this);
+					let $calItem = $(this);
 					if($calItem.hasClass('init')){
 						return;
 					}

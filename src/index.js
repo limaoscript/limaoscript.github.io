@@ -1,5 +1,6 @@
 import '../src/index.css'
 import '../src/iconFont/iconFont.css'
+
 //事件的跨浏览器兼容
 function addEvent(element, type, handler) {
   if (element.addEventListener) {
@@ -53,7 +54,7 @@ Node.prototype = {
 
   //展开/收拢
   toggleFold: function () {
-    var i = 0,
+    let i = 0,
       len = this.children.length;
     if (this.isLeaf()) return this;
     for (; i < len; i++) {
@@ -65,7 +66,7 @@ Node.prototype = {
 
   //生成树的DOM
   setDOM: function (treeName, parent, self, link) {
-    var ul = document.createElement('ul'),
+    let ul = document.createElement('ul'),
       li = document.createElement('li'),
       span = document.createElement('span'),
       //添加图标
@@ -110,7 +111,7 @@ Node.prototype = {
   },
 
   bind: function () {
-    var rootEle = document.getElementById('tree-area'),
+    let rootEle = document.getElementById('tree-area'),
       target = null;
     addEvent(rootEle, 'click', function (e) {
       target = e.target;
@@ -119,7 +120,7 @@ Node.prototype = {
       if (target.className.indexOf('icon-down') !== -1) {
         target.className = 'iconfont icon-down invisible';
         target.parentNode.getElementsByClassName('icon-enter')[0].className = 'iconfont icon-enter visible';
-        for (var i = 1; i < target.parentNode.parentNode.children.length; i++) {
+        for (let i = 1; i < target.parentNode.parentNode.children.length; i++) {
           target.parentNode.parentNode.children[i].style = 'display:none;'
         }
       }
@@ -127,7 +128,7 @@ Node.prototype = {
       if (target.className.indexOf('icon-enter') !== -1) {
         target.className = 'iconfont icon-enter invisible';
         target.parentNode.getElementsByClassName('icon-down')[0].className = 'iconfont icon-down visible';
-        for (var i = 1; i < target.parentNode.parentNode.children.length; i++) {
+        for (let i = 1; i < target.parentNode.parentNode.children.length; i++) {
           target.parentNode.parentNode.children[i].style = 'display:block;'
         }
       }
@@ -153,7 +154,7 @@ Tree.prototype = {
   //深度首次遍历
   traverseDF: function (callback) {
     (function recurse(currentNode) {
-      for (var i = 0; i < currentNode.children.length; i++) {
+      for (let i = 0; i < currentNode.children.length; i++) {
         recurse(currentNode.children[i]);
       }
       callback(currentNode);
@@ -162,12 +163,12 @@ Tree.prototype = {
 
   //广度首次遍历
   traverseBF: function (callback) {
-    var queue = [];
+    let queue = [];
 
     queue.push(this._root);
-    var currentNode = queue.shift();
+    let currentNode = queue.shift();
     while (currentNode) {
-      for (var i = 0; i < currentNode.children.length; i++) {
+      for (let i = 0; i < currentNode.children.length; i++) {
         queue.push(currentNode.children[i]);
       }
       callback(currentNode);
@@ -180,7 +181,7 @@ Tree.prototype = {
   },
 
   add: function (data, toData, tvaversal, link) {
-    var child = new Node(data),
+    let child = new Node(data),
       parent = null,
       callback = function (node) {
         if (node.data === toData) {
@@ -199,7 +200,7 @@ Tree.prototype = {
   },
 
   remove: function (data, formData, tvaversal) {
-    var parent = null,
+    let parent = null,
       index,
       callback = function (node) {
         if (node.data === formData) {
@@ -222,9 +223,9 @@ Tree.prototype = {
   },
 
   getIndex: function (data, parent) {
-    var i = 0,
-      len = parent.children.length;
-    index;
+    let i = 0,
+      len = parent.children.length,
+      index;
     for (; i < len; i++) {
       if (data === parent.children[i].data) {
         index = i;
@@ -234,15 +235,15 @@ Tree.prototype = {
   }
 }
 
-var root = new Tree('前端开发');
+let root = new Tree('前端开发');
 root.add('project', '前端开发', root.traverseBF);
 root.add('JS', '前端开发', root.traverseBF);
 root.add('CSS', '前端开发', root.traverseBF);
 root.add('UI', '前端开发', root.traverseBF);
 root.add('HTML', '前端开发', root.traverseBF);
-root.add('轮播图构造模式', 'project', root.traverseBF, './project/carousel/carousel1/index.html');
-root.add('轮播图模块化封装', 'project', root.traverseBF, './project/carousel/carousel2/index.html');
-root.add('轮播图模块化封装2', 'project', root.traverseBF, './project/carousel/carousel3/index.html');
+root.add('轮播图构造模式', 'project', root.traverseBF, './carousel1.html');
+root.add('轮播图模块化封装', 'project', root.traverseBF, './carousel2.html');
+root.add('轮播图模块化封装2', 'project', root.traverseBF, './carousel3.html');
 // root.add('懒加载', 'project', root.traverseBF, './project/lazyload/index.html');
 root.add('瀑布流+懒加载', 'project', root.traverseBF, './project/waterFall/index.html');
 root.add('AngularJS', 'JS', root.traverseBF);
