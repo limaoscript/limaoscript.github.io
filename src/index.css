@@ -69,7 +69,12 @@ li span:hover{
 
 @keyframes swing
 {
-	30%
+	10%
+	{
+		-webkit-transform: translateX(3px);
+		transform: translateX(3px);
+	}
+	50%
 	{
 		-webkit-transform: translateX(8px);
 		transform: translateX(8px);
