@@ -28,7 +28,9 @@ li span{
 	padding: 10px;
 	display: inline-block;
 	border-radius: 3px;
+	transition:all .3s ease;
 }
+
 li span:hover{
 	background-color: #ebebeb;
 }
@@ -56,4 +58,26 @@ li span:hover{
 
 .link{
 	cursor: pointer;
+}
+
+.link:hover{
+	-webkit-animation: swing 1s ease;
+	animation: swing 1s ease;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+
+@keyframes swing
+{
+	30%
+	{
+		-webkit-transform: translateX(8px);
+		transform: translateX(8px);
+	}
+
+	100%
+	{
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
 }
