@@ -1,18 +1,19 @@
+import $ from 'jquery';
 (function($) {
 	$.fn.waterFall = function(options) {
-		var defaultConf = {
+		let defaultConf = {
 			imgWidth: 200,
 			marginBottom: 15
 		};
 
-		var conf = $.extend({}, defaultConf, options || {});
+		let conf = $.extend({}, defaultConf, options || {});
 
-		var $container = this,
+		let $container = this,
 			$wrap = this.find('.wrap');
 
 		$wrap.addClass('wrap-' + conf.imgWidth);
 
-		var base = [],
+		let base = [],
 			cols,
 			marginRight,
 			boxs = $wrap.find('.box');
@@ -26,13 +27,13 @@
 
 			$wrap.css('margin-right', -1 * marginRight);
 
-			for (var i = 0; i < cols; i++) {
+			for (let i = 0; i < cols; i++) {
 				base[i] = 0;
 			}
 
 			boxs.each(function() {
-				var box = $(this);
-				var index = getMinIndex();
+				let box = $(this);
+				let index = getMinIndex();
 				box.css({
 					left: index * (conf.imgWidth + marginRight),
 					top: base[index]
@@ -42,9 +43,9 @@
 			})
 
 			function getMinIndex() {
-				var len = cols;
-				var index = len - 1;
-				for (var i = len - 2; i >= 0; i--) {
+				let len = cols;
+				let index = len - 1;
+				for (let i = len - 2; i >= 0; i--) {
 					if (base[i] <= base[index]) {
 						index = i;
 					}
@@ -57,5 +58,5 @@
 		$(window).resize(init);
 		return this;
 	}
-})(jQuery)
+})($)
 

@@ -1,4 +1,5 @@
-var lazyLoad = (function() {
+import $ from 'jquery';
+let lazyLoad = (function() {
 
 	function init($selector, callback) {
 		if (!lazyLoad._isBind) {
@@ -14,7 +15,7 @@ var lazyLoad = (function() {
 		$img.attr('src', $img.attr('data-src'));
 	}
 
-	var lazyLoad = {
+	let lazyLoad = {
 
 		_queue: [],
 
@@ -22,10 +23,10 @@ var lazyLoad = (function() {
 
 
 		_add: function($selector, callback) {
-			var me = this;
+			let me = this;
 
 			$selector.each(function() {
-				var $item = $(this);
+				let $item = $(this);
 				me._queue.push({
 					$ele: $item,
 					cab: callback
@@ -34,7 +35,7 @@ var lazyLoad = (function() {
 		},
 
 		_bind: function() {
-			var timer = null,
+			let timer = null,
 				me = this,
 				interval = 40;
 
@@ -49,13 +50,13 @@ var lazyLoad = (function() {
 		},
 
 		_do: function() {
-			var queueList = this._queue,
+			let queueList = this._queue,
 				len = queueList.length,
 				i = 0,
 				arr = [];
 
 			for (; i < len; i++) {
-				var item = queueList[i];
+				let item = queueList[i];
 				if (this._isShow(item.$ele)) {
 					console.log(item.$ele.offset().top)
 					item.cab.call(item.$ele[0]);
@@ -67,11 +68,11 @@ var lazyLoad = (function() {
 		},
 
 		_isShow: function($ele) {
-			var scrollHeight = $(document).scrollTop();
+			let scrollHeight = $(document).scrollTop();
 
-			var winHeight = $(window).height();
+			let winHeight = $(window).height();
 
-			var top = $ele.offset().top;
+			let top = $ele.offset().top;
 
 			return (top < (scrollHeight + winHeight)) ? true : false;
 		}

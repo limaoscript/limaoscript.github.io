@@ -10,7 +10,8 @@ module.exports = {
     app: './src/index.js',
     carousel1: './src/project/carousel/carousel1/index.js',
     carousel2: './src/project/carousel/carousel2/index.js',
-    carousel3: './src/project/carousel/carousel3/index.js'
+    carousel3: './src/project/carousel/carousel3/index.js',
+    waterFall: './src/project/waterFall/index.js'
   },
   module: {
     rules: [
@@ -73,6 +74,11 @@ module.exports = {
       filename: 'carousel3.html',
       template: 'src/project/carousel/carousel3/index.html',
       chunks:['carousel3'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'waterFall.html',
+      template: 'src/project/waterFall/index.html',
+      chunks:['waterFall'],
     }),
   ],
   output: {

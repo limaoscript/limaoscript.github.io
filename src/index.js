@@ -245,7 +245,7 @@ root.add('轮播图构造模式', 'project', root.traverseBF, './carousel1.html'
 root.add('轮播图模块化封装', 'project', root.traverseBF, './carousel2.html');
 root.add('轮播图模块化封装2', 'project', root.traverseBF, './carousel3.html');
 // root.add('懒加载', 'project', root.traverseBF, './project/lazyload/index.html');
-root.add('瀑布流+懒加载', 'project', root.traverseBF, './project/waterFall/index.html');
+root.add('瀑布流+懒加载', 'project', root.traverseBF, './waterFall.html');
 root.add('AngularJS', 'JS', root.traverseBF);
 root.add('React', 'JS', root.traverseBF);
 root.add('ExtJS', 'JS', root.traverseBF);
