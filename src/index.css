@@ -1,30 +1,36 @@
 *{
 	box-sizing: border-box;
 }
+
 #container{
 	display: inline-block;
 }
+
 fieldset{
-	padding: 20px;
+	padding: 5px;
 }
+
 #ul-root{
 	margin: 0;
 	padding: 0;
 }
+
 ul{
-	padding-left: 30px; 
-	margin:5px;
+	padding-left: 30px;
 }
+
 li{
 	list-style: none;
-	padding-bottom: 5px;
+	margin: 2px 0;
 }
 
 li span{
-	padding: 5px;
-	border: 1px solid #00b38a;
+	padding: 10px;
 	display: inline-block;
 	border-radius: 3px;
+}
+li span:hover{
+	background-color: #ebebeb;
 }
 
 .invisible{
@@ -36,20 +42,18 @@ li span{
 }
 
 .icon{
-  font-size: 24px;
+  font-size: 16px;
   margin: 10px 0;
   color:#333;
   -webkit-transition: font-size 0.25s ease-out 0s;
   -moz-transition: font-size 0.25s ease-out 0s;
   transition: font-size 0.25s ease-out 0s;
-
 }
+
 .icon:hover{
-  font-size: 26px;
+  font-size: 16px;
 }
 
-.link:hover{
+.link{
 	cursor: pointer;
-	background-color: #00b38a;
-	color: #fff;
 }
