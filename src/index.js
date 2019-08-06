@@ -250,6 +250,7 @@ root.add('AngularJS', 'JS', root.traverseBF);
 root.add('React', 'JS', root.traverseBF);
 root.add('ExtJS', 'JS', root.traverseBF);
 root.add('NodeJS', 'JS', root.traverseBF);
+root.add('TypeScript', 'JS', root.traverseBF);
 root.add('CSS2.0', 'CSS', root.traverseBF);
 root.add('CSS3.0', 'CSS', root.traverseBF);
 root.add('SASS', 'CSS', root.traverseBF);
