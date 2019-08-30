@@ -1,5 +1,4 @@
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -55,7 +54,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       chunks:['app'],
@@ -89,7 +87,7 @@ module.exports = {
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
-  // optimization: {  //https://webpack.js.org/guides/caching/  TODO:: 暂时不用理解不够
+  // optimization: {  //https://webpack.js.org/guides/caching/  TODO::
   //   moduleIds: 'hashed',
   //   runtimeChunk: 'single',
   //   splitChunks: {
